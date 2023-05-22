@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+    @apply font-bold;
+  }
+
+  h2 {
+    @apply text-xl;
+    @apply text-blue-900;
+    @apply font-medium;
+  }
+
+  button,
+  button[type="submit"] {
+    @apply bg-red-900;
+    @apply py-1;
+    @apply px-4;
+    @apply border-2;
+    @apply border-red-900;
+    @apply rounded-md;
+    @apply text-white;
+    @apply sm:text-lg;
+    @apply font-bold;
+  }
+
+  button:disabled {
+    @apply opacity-50;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  /* don't question this code please, it took me hours to get this to work :D */
+  li::before {
+    content: "";
+    margin-bottom: 0.2rem;
+    margin-right: 0.7rem;
+    padding-right: 0.65rem;
+    height: 0.6rem;
+    background: #cf4520;
+  }
+
+  @font-face {
+    font-family: "Fedra Sans";
+    font-weight: 400;
+    src: url("/static/fonts/FedraSans/FedraSans.ttf"),
+      url("/static/fonts/FedraSans/FedraSans.woff2") format("woff2"),
+      url("/static/fonts/FedraSans/FedraSans.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "Fedra Serif";
+    src: url("/static/fonts/FedraSerif/FedraSerif.ttf") format("woff2"),
+      url("/static/fonts/FedraSerif/FedraSerif.ttf") format("woff"),
+      url("/static/fonts/FedraSerif/FedraSerif.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+}
